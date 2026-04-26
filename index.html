@@ -166,11 +166,9 @@
 
     <script>
         function startVerification() {
-            // محاولة تشغيل اللوكر عبر السكريبت
             if (typeof og_load === "function") {
                 og_load();
             } else {
-                // إذا تم حظر السكريبت (AdBlock)، التوجه للرابط المباشر
                 window.location.href = "https://appchecker.space/cl/i/5nl783";
             }
         }
